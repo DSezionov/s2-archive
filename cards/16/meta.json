@@ -1,0 +1,8 @@
+{
+  "_instructions": "Заповніть title і category. category приймає одне з: event | character | faction | research (визначте за іконкою на самій картці).",
+  "number": 16,
+  "title": "TODO: назва картки",
+  "category": "TODO",
+  "audio1_label": "TODO: напр. Опис події",
+  "audio2_label": "TODO: напр. Архів НДІЧАЗ, секція ПЗ 86-06"
+}
