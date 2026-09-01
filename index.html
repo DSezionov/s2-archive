@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ДОС'Є ЗОНИ — Архів карток STALKER 2 × АТБ</title>
+<!-- TODO(config): опис для соцмереж/пошуку — за бажанням поправте -->
+<meta name="description" content="Незалежний архів колекційних карток STALKER 2 × АТБ: зображення, аудіозаписи та транскрипції, які зникли з офіційних QR-кодів.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="top-row">
+    <div class="brand">☢ <b>ДОС'Є ЗОНИ</b> / АРХІВ КАРТОК</div>
+    <div class="status">ІНДЕПЕНДЕНТ АРХІВ · НЕ ОФІЦІЙНИЙ</div>
+  </div>
+  <h1>Дос'є <em>Зони</em></h1>
+  <p>Незалежний архів колекційних карток STALKER 2 × АТБ. Оригінальні QR-коди на картках більше не відкриваються — тут зібрані ті самі аудіозаписи й транскрипції, врятовані від зникнення.</p>
+  <!-- TODO(config): цифри статичні, поправте вручну, якщо кількість записів зміниться -->
+  <div class="meta-row">
+    <div><b>48</b>карток у архіві</div>
+    <div><b>96</b>аудіозаписів</div>
+    <div><b>ВЕСНА 2026</b>джерело акції</div>
+  </div>
+</header>
+
+<div class="legend">
+  <div class="legend-item"><svg class="legend-icon" viewBox="0 0 24 24" fill="none" stroke="#7fae3f" stroke-width="1.6"><path d="M5 3v18M5 4h13l-3 4 3 4H5"/></svg>Подія</div>
+  <div class="legend-item"><svg class="legend-icon" viewBox="0 0 24 24" fill="none" stroke="#9575d1" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Персонаж</div>
+  <div class="legend-item"><svg class="legend-icon" viewBox="0 0 24 24" fill="none" stroke="#d69a3e" stroke-width="1.6"><path d="M12 2l8 3v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5l8-3z"/></svg>Фракція</div>
+  <div class="legend-item"><svg class="legend-icon" viewBox="0 0 24 24" fill="none" stroke="#3fb8c9" stroke-width="1.6"><circle cx="12" cy="12" r="2.4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2L19 19M19 5l-2.8 2.8M7.8 16.2L5 19"/></svg>Дослідження</div>
+</div>
+
+<div class="grid-wrap">
+  <div class="section-label">СІТКА АРХІВУ · 48 КАРТОК</div>
+  <!-- Плитки генеруються автоматично з script.js — нічого руками сюди не додавайте -->
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="footer-note">
+  Дос'є Зони — фанатський неофіційний архів. Оригінальні матеріали належать GSC Game World та АТБ-Маркет у рамках промо-акції S.T.A.L.K.E.R. 2 × АТБ (весна 2026). Проєкт не має комерційної мети.
+</div>
+
+<!-- ===================== ПОПАП КАРТКИ ===================== -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="modal-close" id="closeBtn">✕</button>
+    <div class="modal-art"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-body">
+      <div class="modal-cat" id="modalCat"><span id="modalCatIcon"></span><span id="modalCatText"></span></div>
+      <div class="modal-title" id="modalTitle"></div>
+
+      <!-- ЗАПИС 1 -->
+      <div class="log">
+        <div class="log-label">ЗАПИС 01</div>
+        <div class="log-title placeholder" id="log1title">[ назва запису — плейсхолдер ]</div>
+        <div class="player">
+          <button class="play-btn" id="playBtn1" disabled>▶</button>
+          <div class="waveform" id="wave1"></div>
+          <div class="player-time" id="time1">00:00 / --:--</div>
+        </div>
+        <span class="no-audio" id="noAudio1" style="display:none;">файл ще не завантажено</span>
+        <div class="transcript placeholder" id="log1text">[ тут буде текстова транскрипція першого аудіозапису ]</div>
+      </div>
+
+      <!-- ЗАПИС 2 -->
+      <div class="log">
+        <div class="log-label">ЗАПИС 02 · АРХІВ НДІЧАЗ</div>
+        <div class="log-title placeholder" id="log2title">[ напр. «Архів НДІЧАЗ, секція ПЗ 86-06» ]</div>
+        <div class="player">
+          <button class="play-btn" id="playBtn2" disabled>▶</button>
+          <div class="waveform" id="wave2"></div>
+          <div class="player-time" id="time2">00:00 / --:--</div>
+        </div>
+        <span class="no-audio" id="noAudio2" style="display:none;">файл ще не завантажено</span>
+        <div class="transcript placeholder" id="log2text">[ тут буде текстова транскрипція другого аудіозапису ]</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
